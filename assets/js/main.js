@@ -202,7 +202,12 @@ for (let index = 0; index < tabs.length; index++) {
 		});
 	}
 }
-
+document.body.onload = function () {
+	setTimeout(function () {
+		let preloader = document.querySelector('.cloud')
+		preloader.classList.add('done')
+	}, 3000)
+}
 
 let colors = {
 	color1: "#FFFFFF",
@@ -218,8 +223,8 @@ let options = {
 	float: 0,
 	glow: 1,
 	imageUrl: [
-		'/assets/image/s-1.svg',
-		'/assets/image/s-2.svg'
+		'assets/image/s-1.svg',
+		'assets/image/s-2.svg'
 	],
 	maxAlpha: 1,
 	maxSize: 12,
@@ -242,9 +247,3 @@ window.initSparticles = function () {
 	window.mySparticles = new sparticles.Sparticles(main, options);
 };
 
-document.body.onload = function () {
-	setTimeout(function () {
-		let preloader = document.querySelector('.cloud')
-		preloader.classList.add('done')
-	}, 3000)
-}
